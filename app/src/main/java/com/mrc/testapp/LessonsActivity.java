@@ -13,8 +13,10 @@ import android.widget.ScrollView;
 public class LessonsActivity extends AppCompatActivity {
 
     Button tablica;
+    Button ymnDel;
     ScrollView tablePic;
     Button sumRazn;
+    Button bolMen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +49,24 @@ public class LessonsActivity extends AppCompatActivity {
                 Intent intent = new Intent(LessonsActivity.this, SumYdal_Activity.class);
                 startActivity(intent);
 
+            }
+        });
+
+        bolMen = (Button)findViewById(R.id.bolmen);
+        bolMen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LessonsActivity.this, BolMenActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ymnDel = (Button)findViewById(R.id.ymnojdel);
+        ymnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LessonsActivity.this, YmnDelActivity.class);
+                startActivity(intent);
             }
         });
 
