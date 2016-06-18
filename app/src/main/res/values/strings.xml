@@ -7,6 +7,11 @@
     <string name="bolmen">Больше или меньше</string>
     <string name="ymnojdel">Умножение и деление</string>
     <string name="sumraz">Сложение и отнимание</string>
+    <string name="mTrue">Правда</string>
+    <string name="mFalse">Ложь</string>
+    <string name="mNext">Следующий вопрос</string>
+    <string name="correct_toast">Правильно</string>
+    <string name="incorrect_toast">Неправильно</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

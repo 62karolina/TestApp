@@ -7,6 +7,65 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.mrc.testapp.TetsActivity">
+    tools:context="com.mrc.testapp.TetsActivity"
+    android:background="@drawable/background_1">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/numberQest"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textIsSelectable="false"
+        android:textSize="30dp"
+        android:textColor="#030303" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/quest"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="35dp"
+        android:textColor="#000000" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mTrue"
+        android:id="@+id/mTrue"
+        android:layout_below="@+id/quest"
+        android:layout_alignRight="@+id/quest"
+        android:layout_alignEnd="@+id/quest"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="#00ffffff"
+        android:layout_marginRight="20dp"
+        android:textColor="#000000" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mFalse"
+        android:id="@+id/mFalse"
+        android:layout_below="@+id/quest"
+        android:layout_toRightOf="@+id/mTrue"
+        android:layout_toEndOf="@+id/mTrue"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:background="#00ffffff"
+        android:layout_marginLeft="20dp"
+        android:textColor="#000000" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/mNextButton"
+        android:layout_below="@+id/mTrue"
+        android:layout_centerHorizontal="true"
+        android:src="@android:drawable/ic_media_play" />
 
 </RelativeLayout>

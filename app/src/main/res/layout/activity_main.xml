@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/test"
-        android:id="@+id/Тест"
+        android:id="@+id/test"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
@@ -42,7 +42,7 @@
         android:background="#00ffffff"
         android:textStyle="bold"
         android:textSize="40dp"
-        android:layout_above="@+id/Тест"
+        android:layout_above="@+id/test"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 </RelativeLayout>
