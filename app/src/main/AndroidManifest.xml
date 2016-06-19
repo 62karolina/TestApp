@@ -19,7 +19,8 @@
         <activity android:name=".SumYdal_Activity" />
         <activity android:name=".BolMenActivity" />
         <activity android:name=".YmnDelActivity" />
-        <activity android:name=".TetsActivity"></activity>
+        <activity android:name=".TetsActivity" />
+        <activity android:name=".ControlActivity" />
     </application>
 
 </manifest>

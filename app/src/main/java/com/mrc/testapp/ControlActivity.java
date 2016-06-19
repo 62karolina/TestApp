@@ -11,33 +11,41 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TetsActivity extends AppCompatActivity {
+import java.util.Random;
+
+public class ControlActivity extends AppCompatActivity {
 
     int i = 0;
+    int b = 0;
     TextView numberQ;
     TextView mQuestionTextView;
+    TextView statistic;
     Button mTrueButton;
     Button mFalseButton;
     ImageButton mNextButton;
+    Random random = new Random();
 
     private TrueFalse[] mQuestionBank = new TrueFalse[] {
             new TrueFalse("1 + 1 = 5", false),
             new TrueFalse("2 + 8 = 10", true),
-            new TrueFalse("7 + 1 = 9", false),
+            new TrueFalse("7 < 1 ", false),
             new TrueFalse("10 + 7 = 17", true),
-            new TrueFalse("4 + 2 = 6", true),
+            new TrueFalse("4 > 2", true),
             new TrueFalse("1 + 5 = 10", false),
-            new TrueFalse("6 + 1 = 5", false),
+            new TrueFalse("6 / 1 = 6", true),
             new TrueFalse("8 + 8 = 16", true),
             new TrueFalse("9 + 10 = 9", false),
             new TrueFalse("0 + 7 = 7", true),
+            new TrueFalse("9 > 10", false),
+            new TrueFalse("0 / 7 = 0", true),
     };
     private int mCurrentIndex = 0;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tets);
+        setContentView(R.layout.activity_control);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -45,7 +53,7 @@ public class TetsActivity extends AppCompatActivity {
 
 
         numberQ = (TextView)findViewById(R.id.numberQest);
-
+        statistic = (TextView)findViewById(R.id.statistic);
 
         mQuestionTextView = (TextView)findViewById(R.id.quest);
 
@@ -69,17 +77,20 @@ public class TetsActivity extends AppCompatActivity {
         mNextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                i++;
+
+                b++;
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
                 numberQ.setText("Вопрос №" + String.valueOf(mCurrentIndex + 1));
                 updateQuestion();
-                if(i == 10){
-                    Intent intent = new Intent(TetsActivity.this, MainActivity.class);
-                    startActivity(intent);
+
+                if(b == 10){
+                    statistic.setText("Отвечено правильно на " + String.valueOf(i));
+                    mNextButton.setVisibility(View.INVISIBLE);
                 }
 
             }
         });
+
 
         updateQuestion();
 
@@ -92,15 +103,16 @@ public class TetsActivity extends AppCompatActivity {
 
     }
 
-    private void checkAnswer(boolean userPressedTrue) {
+    private int checkAnswer(boolean userPressedTrue) {
         boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
         int messageResId = 0;
         if (userPressedTrue == answerIsTrue) {
-            messageResId = R.string.correct_toast;
+            return i++;
         } else {
-            messageResId = R.string.incorrect_toast;
+            return i;
         }
-        Toast.makeText(this, messageResId, Toast.LENGTH_SHORT)
-                .show();
+
     }
+
+
 }
